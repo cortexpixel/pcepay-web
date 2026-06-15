@@ -2,9 +2,12 @@ import { NextResponse } from "next/server";
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { z } from "zod";
 
+// Next.js App Router metadata for API route execution
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+// Validation schema for incoming contact form payloads.
+// This ensures only valid data reaches the email sending logic.
 const contactSchema = z.object({
   title: z.string().min(1).max(20),
   fullName: z.string().trim().min(1).max(100),
@@ -14,6 +17,10 @@ const contactSchema = z.object({
   message: z.string().trim().min(1).max(2000),
 });
 
+/**
+ * escapeHtml
+ * Safely encodes user-provided text for HTML output to prevent injection.
+ */
 function escapeHtml(s: string) {
   return s
     .replace(/&/g, "&amp;")
@@ -23,9 +30,16 @@ function escapeHtml(s: string) {
     .replace(/'/g, "&#039;");
 }
 
+/**
+ * POST
+ * API route handler for POST /api/contact.
+ * Parses and validates the JSON body, then sends an email via AWS SES.
+ */
 export async function POST(req: Request) {
   try {
     const body = await req.json();
+
+    // Validate incoming payload against schema
     const parsed = contactSchema.safeParse(body);
     if (!parsed.success) {
       return NextResponse.json(
@@ -33,8 +47,10 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
     const data = parsed.data;
 
+    // Read required AWS SES configuration from environment variables
     const region = process.env.AWS_SES_REGION;
     const fromEmail = process.env.SES_FROM_EMAIL;
     const toEmail = process.env.SES_TO_EMAIL || "support@pcepay.co.uk";
@@ -48,12 +64,15 @@ export async function POST(req: Request) {
       );
     }
 
+    // Initialize AWS SES client with explicit credentials
     const ses = new SESClient({
       region,
       credentials: { accessKeyId, secretAccessKey },
     });
 
     const subject = `New Contact Enquiry: ${data.enquiryType}`;
+
+    // Construct plain text body for the email
     const textBody = [
       `Title: ${data.title}`,
       `Full Name: ${data.fullName}`,
@@ -65,6 +84,7 @@ export async function POST(req: Request) {
       data.message,
     ].join("\n");
 
+    // Construct HTML body with escaped values for safe display
     const htmlBody = `
       <div style="font-family:Arial,sans-serif;max-width:600px">
         <h2 style="color:#0f1b3d">New Contact Enquiry</h2>
@@ -80,6 +100,7 @@ export async function POST(req: Request) {
       </div>
     `;
 
+    // Send email through AWS SES
     await ses.send(
       new SendEmailCommand({
         Source: fromEmail,
