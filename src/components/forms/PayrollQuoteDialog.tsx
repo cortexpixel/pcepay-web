@@ -67,9 +67,23 @@ export const PayrollQuoteDialog = ({ trigger }: PayrollQuoteDialogProps) => {
       return;
     }
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      const response = await fetch('/api/payroll-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) throw new Error('Submission failed');
+      setSubmitted(true);
+    } catch (err) {
+      toast({
+        title: 'Something went wrong',
+        description: 'Please try again or email us directly at support@pcepay.co.uk.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleOpenChange = (isOpen: boolean) => {

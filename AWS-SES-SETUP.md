@@ -1,8 +1,17 @@
-# Contact Form via Next.js API Route + AWS SES
+# Contact / Payroll Quote / General Enquiry Forms via Next.js API Routes + AWS SES
 
-The contact form on `/contact` posts to the internal API route at
-`src/app/api/contact/route.ts`, which sends the email through **Amazon SES**
-using the AWS SDK v3.
+All three site forms post to internal Next.js API routes which send email
+through **Amazon SES** using the AWS SDK v3:
+
+| Form | Trigger location | API route | Email subject |
+| --- | --- | --- | --- |
+| Contact form | `/contact` page | `src/app/api/contact/route.ts` | `New Contact Enquiry: <enquiryType>` |
+| Request a Payroll Quote | `PayrollQuoteDialog` (CTA on most pages) | `src/app/api/payroll-quote/route.ts` | `New Payroll Quote Request: <companyName>` |
+| General Enquiry | `GeneralEnquiryDialog` (CTA on most pages) | `src/app/api/general-enquiry/route.ts` | `New General Enquiry: <subject>` |
+
+All routes send **to** `support@pcepay.co.uk` (override with `SES_TO_EMAIL`),
+**from** `SES_FROM_EMAIL`, and set `Reply-To` to the visitor's email so a
+single reply goes straight back to them.
 
 ---
 
