@@ -96,7 +96,7 @@ const PayrollApp = () => {
                       Get on Google Play <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
                   </Button>
-                  <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+                  <Button variant="hero-outline" size="lg" asChild>
                     <a href="https://apps.apple.com/gb/app/peace-payroll/id6745489122" target="_blank" rel="noopener noreferrer">
                       Download on App Store
                     </a>
