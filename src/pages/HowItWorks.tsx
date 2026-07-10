@@ -218,7 +218,7 @@ const HowItWorks = () => {
                     { criteria: "Administration", umbrella: "Handled by the umbrella company", limited: "You manage everything yourself" },
                     { criteria: "Tax Responsibilities", umbrella: "PAYE — taxes deducted at source", limited: "Self-assessment & corporation tax filing" },
                     { criteria: "Payroll Management", umbrella: "Fully managed for you", limited: "You arrange your own payroll" },
-                    { criteria: "Compliance", umbrella: "Umbrella ensures IR35 & HMRC compliance", limited: "Your responsibility to stay compliant" },
+                    { criteria: "Compliance", umbrella: "Umbrella ensures IR35 & tax compliance", limited: "Your responsibility to stay compliant" },
                     { criteria: "Setup Complexity", umbrella: "Quick and easy — start same day", limited: "Requires company registration & accountant" },
                     { criteria: "Best Suited For", umbrella: "Short-term contracts & inside IR35 roles", limited: "Long-term contracts & outside IR35 roles" },
                   ].map((row, i) => (

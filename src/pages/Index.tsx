@@ -115,7 +115,7 @@ const Index = () => {
             Payroll Solutions for Peace of Mind
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our HMRC compliant, accurate and flexible umbrella service ensures your wages are sorted on time.
+            Our accurate, compliant and flexible umbrella service ensures your wages are sorted on time.
           </p>
           <div className="w-24 h-1 accent-gradient mx-auto mt-6 rounded-full" />
         </div>
@@ -142,7 +142,7 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Shield, label: 'HMRC Compliant', gradient: 'from-blue-500/20 to-cyan-500/20' },
+                { icon: Shield, label: 'Fully Compliant', gradient: 'from-blue-500/20 to-cyan-500/20' },
                 { icon: Award, label: 'Professional', gradient: 'from-purple-500/20 to-pink-500/20' },
                 { icon: Heart, label: 'Passionate', gradient: 'from-rose-500/20 to-orange-500/20' },
                 { icon: Users, label: 'Customer Focused', gradient: 'from-green-500/20 to-emerald-500/20' },
@@ -170,7 +170,7 @@ const Index = () => {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { icon: Shield, label: 'Integrity', desc: 'Systematic values & procedures' },
-                  { icon: Award, label: 'Professionalism', desc: 'HMRC & IR35 compliance' },
+                  { icon: Award, label: 'Professionalism', desc: 'Tax & IR35 compliance' },
                   { icon: Clock, label: 'Same Day', desc: 'Accurate payments on time' },
                   { icon: FileCheck, label: 'Compliant', desc: 'Full regulatory adherence' },
                 ].map((item) => (
@@ -193,11 +193,11 @@ const Index = () => {
                 Why Peace Payroll?
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                We provide services for agency workers, consultants, contractors and self-employed workers. We provide accurate same day payments whilst we ensure compliance with HMRC and IR35 regulations.
+                We provide services for agency workers, consultants, contractors and self-employed workers. We provide accurate same day payments whilst we ensure compliance with tax and IR35 regulations.
               </p>
               <ul className="space-y-3 mb-6">
-                {['HMRC Compliant', 'IR35 Compliant', 'Same Day Payments', 'Expert Support'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-foreground">
+                {['Tax Compliant', 'IR35 Compliant', 'Same Day Payments', 'Expert Support'].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-foreground">
                     <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-accent" />
                     </div>

@@ -21,7 +21,7 @@ const services: ServiceItem[] = [
   {
     title: "Payroll Services",
     description:
-      "We provide a flexible umbrella payroll service that is consistent, HMRC compliant, timely and accurate to a variety of businesses and employment types across varying sectors. We also ensure full employment rights such as annual leave payments, Statutory Sick Pay, Statutory Maternity Pay are complied with in accordance with contractual terms with your agency or company.",
+        "We provide a flexible umbrella payroll service that is consistent, compliant, timely and accurate to a variety of businesses and employment types across varying sectors. We also ensure full employment rights such as annual leave payments, Statutory Sick Pay, Statutory Maternity Pay are complied with in accordance with contractual terms with your agency or company.",
     icon: Clock,
     link: "/services/payroll-services",
   },
@@ -136,9 +136,9 @@ const Services = () => {
           <ScrollReveal variant="fadeUp">
             <div className="bg-card rounded-2xl p-8 md:p-12 shadow-card border border-border/50 flex flex-col md:flex-row items-center gap-8">
               <div className="flex-shrink-0">
-                <img 
-                  src={smartPensionLogo} 
-                  alt="Smart Pension Provider" 
+                <img
+                  src={smartPensionLogo}
+                  alt="Smart Pension Provider"
                   className="h-20 w-auto object-contain"
                 />
               </div>

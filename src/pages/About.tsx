@@ -10,7 +10,7 @@ const aboutHeroBg = '/assets/about-hero-bg.jpg';
 const About = () => {
   return (
     <Layout>
-      <SEOHead 
+      <SEOHead
         title="About Peace Payroll | Professional Umbrella Company"
         description="Peace Payroll is an umbrella company with a difference. We provide exceptional payroll and employment services to contractors, agency and self employed workers."
         keywords="about peace payroll, umbrella company, payroll services, contractor employment"
@@ -21,14 +21,14 @@ const About = () => {
       <section className="hero-gradient py-20 md:py-28 relative overflow-hidden">
         {/* Hero Background Image - Translucent */}
         <div className="absolute inset-0">
-          <img 
-            src={aboutHeroBg} 
+          <img
+            src={aboutHeroBg}
             alt="Professional corporate team"
             className="w-full h-full object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/70" />
         </div>
-        
+
         <div className="container-custom relative z-10">
           <ScrollReveal>
             <div className="max-w-3xl">
@@ -56,7 +56,7 @@ const About = () => {
                 </h2>
               </div>
             </ScrollReveal>
-            
+
             <ScrollReveal variant="fadeUp" delay={0.1}>
               <div className="bg-card rounded-2xl p-8 md:p-12 shadow-card border border-border/50 mb-8">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -90,7 +90,7 @@ const About = () => {
               { icon: MessageCircle, title: "Communication", description: "We maintain proactive, clear dialogue to keep you informed at every step." },
               { icon: Target, title: "Accuracy", description: "We deliver precise, error-free payroll processing you can depend on." },
               { icon: Handshake, title: "Trust", description: "We build lasting relationships founded on reliability and integrity." },
-              { icon: ShieldCheck, title: "Compliance", description: "We adhere to all HMRC regulations and industry standards without compromise." },
+              { icon: ShieldCheck, title: "Compliance", description: "We adhere to all regulatory requirements and industry standards without compromise." },
             ].map((value) => (
               <StaggerItem key={value.title}>
                 <div className="group bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-border/50 hover:border-accent/30 text-center h-full flex flex-col items-center">
@@ -115,7 +115,7 @@ const About = () => {
               Our People
             </h2>
           </ScrollReveal>
-          
+
           <ScrollReveal variant="fadeUp" delay={0.1}>
             <div className="max-w-4xl mx-auto">
               <div className="bg-card rounded-2xl p-8 md:p-12 shadow-card border border-border/50 text-center">

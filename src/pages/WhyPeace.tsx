@@ -19,7 +19,7 @@ const reasons = [
     icon: Award,
     title: "Professionalism",
     description:
-      "Our professional approach ensures we are inline with regulatory HMRC, IR35 and GDPR requirements, so our customers can trust our work and due diligence.",
+        "Our professional approach ensures we are inline with tax, IR35 and GDPR requirements, so our customers can trust our work and due diligence.",
     gradient: "from-purple-500/20 to-pink-500/20",
   },
   {
@@ -113,12 +113,12 @@ const WhyPeace = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Shield, label: "HMRC Compliant", gradient: "from-blue-500/20 to-cyan-500/20" },
+                { icon: Shield, label: "Fully Compliant", gradient: "from-blue-500/20 to-cyan-500/20" },
                 { icon: Clock, label: "Same Day Pay", gradient: "from-amber-500/20 to-yellow-500/20" },
                 { icon: FileCheck, label: "IR35 Compliant", gradient: "from-purple-500/20 to-pink-500/20" },
                 { icon: Headphones, label: "24/7 Support", gradient: "from-green-500/20 to-emerald-500/20" },
               ].map((item) => (
-                <div
+                  <div
                   key={item.label}
                   className={`bg-gradient-to-br ${item.gradient} rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300`}
                 >
@@ -182,7 +182,7 @@ const WhyPeace = () => {
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "100%", label: "HMRC Compliant" },
+              { value: "100%", label: "Tax Compliant" },
               { value: "Same Day", label: "Payments" },
               { value: "IR35", label: "Compliant" },
               { value: "24/7", label: "Support" },
